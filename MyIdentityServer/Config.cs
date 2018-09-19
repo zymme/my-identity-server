@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Saml;
@@ -25,6 +26,7 @@ namespace MyIdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Email()
             };
         }
 
@@ -137,7 +139,40 @@ namespace MyIdentityServer
                     Username = "dave.zimmer@flexential.com",
                     Password = "demo1demo1",
                     ProviderName = "https://peak10dev.service-now.com/navpage.do",
+                    Claims = new []
+                    {
+                        //new Claim(JwtClaimTypes.Subject, "dave.zimmer@flexential.com"),
+                        new Claim(JwtClaimTypes.Name, "Dave Zimmer"),
+                       
+
+                    }
                    
+                },
+                new TestUser
+                {
+                    SubjectId = "Test.User@viawest.com",
+                    Username = "Test.User@viawest.com",
+                    Password = "demo2demo2",
+                    ProviderName = "https://peak10dev.service-now.com/navpage.do",
+                    Claims = new []
+                    {
+                        //new Claim(JwtClaimTypes.Subject, "dave.zimmer@flexential.com"),
+                        new Claim(JwtClaimTypes.Name, "Test Zimmer"),
+
+                    }
+                },
+                new TestUser
+                {
+                    SubjectId = "Madeup.TestUser@viawest.com",
+                    Username = "Madeup.TestUser@viawest.com",
+                    Password = "test123",
+                    ProviderName = "https://peak10dev.service-now.com/navpage.do",
+                    Claims = new []
+                    {
+                        //new Claim(JwtClaimTypes.Subject, "dave.zimmer@flexential.com"),
+                        new Claim(JwtClaimTypes.Name, "Madeup TestUser Zimmer"),
+
+                    }
                 }
             };
         }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMVCApp", "MyMVCApp\MyMVCA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyIdentityServerIdentCoreApp", "MyIdentityServerIdentCoreApp\MyIdentityServerIdentCoreApp.csproj", "{B1D81B67-93A6-4389-BD31-25F805B5446C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServerv2", "IdentityServerv2\IdentityServerv2.csproj", "{4BE0866E-0F97-48C4-979A-BA81F79F419E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,5 +39,9 @@ Global
 		{B1D81B67-93A6-4389-BD31-25F805B5446C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1D81B67-93A6-4389-BD31-25F805B5446C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1D81B67-93A6-4389-BD31-25F805B5446C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BE0866E-0F97-48C4-979A-BA81F79F419E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE0866E-0F97-48C4-979A-BA81F79F419E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE0866E-0F97-48C4-979A-BA81F79F419E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE0866E-0F97-48C4-979A-BA81F79F419E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

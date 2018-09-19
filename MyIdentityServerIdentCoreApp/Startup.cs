@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using Microsoft.EntityFrameworkCore;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Builder;
@@ -13,6 +14,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyIdentityServerIdentCoreApp.Services;
+using Microsoft.AspNet.Identity.EntityFramework;
+
+using MyIdentityServerIdentCoreApp.DAL;
 
 namespace MyIdentityServerIdentCoreApp
 {
@@ -35,10 +39,16 @@ namespace MyIdentityServerIdentCoreApp
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddIdentityWithMongoStores(Configuration.GetConnectionString("DefaultConnectionMongoDB")
-                                                + "/identity4db-AspIdentity")
-                    .AddDefaultTokenProviders()
-                    ;
+            services.AddDbContext<ApplicationDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //services.AddDbContext<ConfluxContext>(options =>
+               //options.UseSqlServer(Configuration.GetConnectionString("Conflux")), ServiceLifetime.Scoped);
+
+            //services.AddIdentityWithMongoStores(Configuration.GetConnectionString("DefaultConnectionMongoDB")
+                    //                            + "/identity4db-AspIdentity")
+                    //.AddDefaultTokenProviders()
+                    //;
                    
 
             // Add application services.

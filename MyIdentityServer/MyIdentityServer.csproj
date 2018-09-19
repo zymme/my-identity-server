@@ -13,6 +13,7 @@
     <PackageReference Include="IdentityServer4" Version="2.2.0" />
     <PackageReference Include="IdentityServer4.Contrib.MongoDB" Version="2.0.1" />
     <PackageReference Include="Rsk.IdentityServer4.Saml" Version="2.2.0-preview2" />
+    <PackageReference Include="Rsk.IdentityServer4.Saml.EntityFramework" Version="2.1.0-preview1" />
   </ItemGroup>
 
   <ItemGroup>

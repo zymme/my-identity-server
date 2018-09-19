@@ -30,6 +30,7 @@ namespace MyIdentityServer
 
 
                      })
+                    //.AddServiceProviderStore<ServiceProviderS>
                     .AddInMemoryIdentityResources(Config.GetIdentityResources())
                     .AddInMemoryApiResources(Config.GetApiResources())
                     .AddInMemoryClients(Config.GetClients())
