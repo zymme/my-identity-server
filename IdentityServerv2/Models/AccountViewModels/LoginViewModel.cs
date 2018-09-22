@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyIdentityServerIdentCoreApp.Models.AccountViewModels
+namespace IdentityServerv2.Models.AccountViewModels
 {
     public class LoginViewModel
     {

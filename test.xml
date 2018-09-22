@@ -1,0 +1,67 @@
+<saml2p:Response xmlns:saml2p="urn:oasis:names:tc:SAML:2.0:protocol"
+                 xmlns:saml2="urn:oasis:names:tc:SAML:2.0:assertion"
+                 ID="_5a95521419864372995c52f04f0f8146"
+                 Version="2.0"
+                 IssueInstant="2018-09-20T11:59:31Z"
+                 Destination="https://peak10dev.service-now.com/navpage.do"
+                 InResponseTo="SNC219bec261c24f87be7dbb487e3a46a0f"
+                 >
+    <saml2:Issuer>http://localhost:5000</saml2:Issuer>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <Reference URI="#_5a95521419864372995c52f04f0f8146">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                <DigestValue>C2o/ISd5bX9inUkp8X/JqsjpY9Z3CH4p8MxJyL9mMKY=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>H+QhQgscF+HIYyzi3XLFGbdqm2IGHIqEiN9k98gmLHAEHDNzmbdIkQJ7mi1G6IzTuwsmCnn32Hbew64+sqEAxqmlwdgBH6kH+oY+Mnzt3g6trx6TU3E6Gs9KcJcQp73pk9tRUhCkiR2qqlklMYUbhjBgx8dPtTUKXpe1tHy4XCyU4B+bXf+vCzthIH0mYOclsHkGAA1G6wG8lBQvKnUitJRaFbVu/LlgaT7w85+7zRtidzWN1AJzVwDHhAmtVeHcqaFbdzhGuUyrRucoPyJalYv3dhBuAWv300stpVkC14gFN5s9eYPQUJsDmFCv2m999cZpvjl4hYC5nbQgPpfZqpiUFO4LlZlKm1MJUHhtGkG3cJBQFSb1WF+qshD6eDXfxjPESqJ6t7w57OyFE+rQ3Atj1Qx81KS6DiGl28tQ7xdmFAkLDS2EwmRearC/XArsk//9kr1d8ShBugVAF7G7IAqXEfKN6yayo3exJkEW/f0cbsCs/cmN+PM29tz098vAYdLtcbIcANmCamShmyth/jEc6yfIZtpMZWXSrHFo6MUQb5XaMpg3Lj7NloTgy/Aq7q3d6Nw6gApIvt8V2T/Jyq8UUF5wBEgWaJOfDlXB3SPItrFmwzufd91o859aLQ8OA1xv2sQEACuT75GKDY3PJJ+SMqlnNTc2E01HMtyvsEI=</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+    <saml2p:Status>
+        <saml2p:StatusCode Value="urn:oasis:names:tc:SAML:2.0:status:Success" />
+    </saml2p:Status>
+    <saml2:Assertion ID="_b7730137-49dd-462e-8c78-51dacddf0b1d"
+                     Version="2.0"
+                     IssueInstant="2018-09-20T11:59:31Z"
+                     >
+        <saml2:Issuer>http://localhost:5000</saml2:Issuer>
+        <saml2:Subject>
+            <saml2:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">dave.zimmer@flexential.com</saml2:NameID>
+            <saml2:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+                <saml2:SubjectConfirmationData NotOnOrAfter="2018-09-20T12:01:31Z"
+                                               InResponseTo="SNC219bec261c24f87be7dbb487e3a46a0f"
+                                               Recipient="https://peak10dev.service-now.com/navpage.do"
+                                               />
+            </saml2:SubjectConfirmation>
+        </saml2:Subject>
+        <saml2:Conditions NotBefore="2018-09-20T11:59:31Z"
+                          NotOnOrAfter="2018-09-20T12:01:31Z"
+                          >
+            <saml2:AudienceRestriction>
+                <saml2:Audience>https://peak10dev.service-now.com</saml2:Audience>
+            </saml2:AudienceRestriction>
+        </saml2:Conditions>
+        <saml2:AttributeStatement>
+            <saml2:Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
+                <saml2:AttributeValue>Dave Zimmer</saml2:AttributeValue>
+            </saml2:Attribute>
+        </saml2:AttributeStatement>
+        <saml2:AuthnStatement AuthnInstant="2018-09-20T11:59:31Z"
+                              SessionIndex="_b7730137-49dd-462e-8c78-51dacddf0b1d"
+                              >
+            <saml2:AuthnContext>
+                <saml2:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:Password</saml2:AuthnContextClassRef>
+            </saml2:AuthnContext>
+        </saml2:AuthnStatement>
+    </saml2:Assertion>
+</saml2p:Response>

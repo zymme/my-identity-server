@@ -1,0 +1,435 @@
+<html dir="ltr" class="ltr" data-doctype="false"><head><title>ServiceNow - Peak 10</title><meta http-equiv="X-UA-Compatible" content="chrome=1"></meta><meta http-equiv="cache-control" content="public"></meta><link rel="shortcut icon" href="peak10favicon.png"></link><link type="text/css" rel="stylesheet" href="/styles/css_includes_navpage.cssx?v=04-25-2018_0908&amp;c=2015-08-22_14:42:14_4c6d7bd7132c6b041ebaf6e2e144b0d4&amp;theme=null"></link><script type="text/javascript" data-description="globals population">
+	window.NOW = window.NOW || {};
+	var g_loadTime = new Date();
+	var lastActivity = new Date();
+	var g_lang = 'en';
+	var g_system_lang = 'en';
+	var g_enhanced_activated = 'true';
+	  var g_popup_timeout = parseInt(100);
+	var g_export_warn_threshold = parseInt(10000);
+	  var g_event_handler_ids = {};
+	var g_event_handlers = [];
+	var g_event_handlers_onLoad = [];
+	var g_event_handlers_onSubmit = [];
+	var g_event_handlers_onChange = [];
+	var g_event_handlers_onCellEdit = {};
+	var g_user_date_time_format = "yyyy-MM-dd HH:mm:ss";
+	var g_user_date_format = "yyyy-MM-dd";
+	var g_user_decimal_separator = ".";
+	var g_user_grouping_separator = ",";
+	var g_glide_list_separator = ", ";
+	var g_tz_offset = -14400000;
+	  var g_tz_user_offset = true;
+	var g_first_day_of_week = parseInt(1, 10);
+	var g_date_picker_first_day_of_week = parseInt(0, 10);
+	  var g_full_calendar_edit = true;
+	var g_submitted = false;
+	var g_max_table_length = 80;
+	var g_fontSizePreference = "";
+	var g_fontSize = "10pt";
+	// use to be the sys_property glide.ui.js_error_notify, hard coded for PRB603998
+	var g_jsErrorNotify = "true";
+	var g_cancelPreviousTransaction = true;
+	var g_text_direction = "ltr";
+	var g_glide_list_filter_max_length =  parseInt("0", 10);
+	var g_accessibility = false;
+	var g_detail_row = false;
+	window.g_load_functions = [];
+	window.g_render_functions = [];
+	window.g_late_load_functions = [];
+
+
+	var g_ck = 'fde75c2313ec6b041ebaf6e2e144b06bc6ff4e38563058c8b80386ac82b55cd01e56589a';
+
+
+
+	var g_acWaitTime = parseInt(250);
+
+
+	var g_autoRequest = '';
+
+	  try {
+	    window.NOW.dateFormat = JSON.parse("{timeAgo: false, dateBoth: false}");
+	  } catch (e) {
+	    window.NOW.dateFormat = {timeAgo: false, dateBoth: false};
+	  }
+
+	window.NOW.shortDateFormat = false;
+	window.NOW.listTableWrap = true;
+	window.NOW.compact = false;
+  	window.NOW.templateToggle = false;
+	window.NOW.tabbed = true;
+	window.NOW.permalink = true;
+	window.NOW.useSimpleStorage = true;
+	window.NOW.simpleStorageSynch = "4f449be513842f401ebaf6e2e144b02e";
+	window.NOW.language =  'en';
+	window.NOW.listOpenInAppTab = false;
+	window.NOW.floatingScrollbars = false;
+
+	window.NOW.user = {};
+	window.NOW.user.preferences = [];
+	window.NOW.user.roles = '';
+	window.NOW.user.allRoles = '';
+	window.NOW.user.userID = '5136503cc611227c0183e96598c4f706';
+	window.NOW.user.departmentID = '221db0edc611228401760aec06c9d929';
+	window.NOW.user.firstName = '';
+	window.NOW.user.lastName = 'Guest';
+	window.NOW.user.name = 'guest';
+	</script><script data-comment="GlideUser initialization">(function() {
+		 g_render_functions.push(setGlideUser);
+		function setGlideUser() {
+			if (window.g_user || !window.GlideUser)
+		return;
+
+		window.g_user = new GlideUser(NOW.user.name,
+			  NOW.user.lastName,
+			  NOW.user.firstName,
+			  NOW.user.roles,
+			  NOW.user.userID,
+			  NOW.user.departmentID);
+		window.g_user.setRoles(NOW.user.allRoles, true);
+		}
+	})();</script><script type="text/javascript" src="/scripts/js_includes_navpage.jsx?v=04-25-2018_0908&amp;lp=Thu_Dec_21_15_10_12_PST_2017&amp;c=11_202"></script><script type="text/javascript" src="/scripts/js_includes_customer.jsx?v=04-25-2018_0908&amp;lp=Thu_Dec_21_15_10_12_PST_2017&amp;c=11_202"></script><script type="text/javascript" data-comment="navpage layout preferences, onfocus observation">/**
+	* Every window needs to observe these events.
+	*/
+	if (Prototype.Browser.IE && !isMSIE9) {
+		document.onfocusout = function() { CustomEvent.fireTop(GlideEvent.WINDOW_BLURRED, window); };
+		document.onfocusin = function() { CustomEvent.fireTop(GlideEvent.WINDOW_FOCUSED, window); };
+	} else {
+		Event.observe(window, 'blur', function() { CustomEvent.fireTop(GlideEvent.WINDOW_BLURRED, window); });
+		Event.observe(window, 'focus', function() { CustomEvent.fireTop(GlideEvent.WINDOW_FOCUSED, window); });
+	}</script><script type="text/javascript">g_swLoadTime = new StopWatch(g_loadTime);
+
+    if (window.CustomEvent)
+        CustomEvent.fireAll("ck_updated", "fde75c2313ec6b041ebaf6e2e144b06bc6ff4e38563058c8b80386ac82b55cd01e56589a");
+
+    Event.observe(window, 'load', function() {
+      if (typeof g_ck != 'undefined') {
+        CustomEvent.observe("ck_updated", function(ck) { g_ck = ck; });
+        CustomEvent.fireAll("ck_updated", "fde75c2313ec6b041ebaf6e2e144b06bc6ff4e38563058c8b80386ac82b55cd01e56589a");}try {
+              var helpico=getTopWindow().document.getElementById("help_ico");
+
+              if (helpico) {
+                var urlname=window.location.pathname.split("?");
+                var search_str = window.location.search;
+
+                // if this is a form, extract the record's sys_id...
+                var sys_id_loc = search_str.search(/sys_id=[0-9a-f]{32}/i);
+                var sys_id_str = (sys_id_loc != -1) ? search_str.substr(sys_id_loc, 39) : null;
+
+                // make the URL to our context help processor...
+                var url_search = "?sysparm_url=" + urlname[0];
+                if (sys_id_loc != -1)
+                   url_search += "&" + sys_id_str;
+
+               	helpico.href="context_help.do" + url_search;
+              }
+            } catch (exception) {}synchCache();
+      pageLoaded();
+    });
+
+    function synchCache() {
+      try {
+        var w = getTopWindow();
+        if (w.g_cache_message)
+          w.g_cache_message.stamp("4f449be513842f401ebaf6e2e144b02e");
+
+        if (w.g_cache_td)
+          w.g_cache_td.stamp("6844441313ec2b041ebaf6e2e144b086");
+      } catch(e) {}
+    }</script><script type="text/javascript" data-description="font size">window.g_fontSizeMessage = "Font size";
+	if (g_fontSizePreference)
+		setPreferredFontSize(0);  // adjust to user preference</script><script>// Don't let the navpage intercept links targeted for the main frame.
+		if (window.name == "gsft_main")
+			window.name = "";
+
+		if (window.GlideManager) {
+			var preferences = {};
+			var properties = {};GlideManager.init({
+				preferences: preferences,
+				properties: properties
+			});
+		}</script></head><body><script>g_amb_on_login = true;</script><script type="text/javascript" src="/scripts/navpage.jsx?v=04-25-2018_0908"></script><script>g_transactionTimerDelay = "15";
+		g_mod_highlight_color = "#eeeeee";</script><script type="text/javascript" src="/scripts/classes/RequestManager.jsx?v=04-25-2018_0908"></script><table border="0" cellspacing="0" class="navpage" cellpadding="0"><tr style="margin: 0px; height: 1px; " id="banner_row"><td align="left" class="navpageTools" valign="top"><input type="hidden" value="en" id="banner_language"></input><div id="banner_top_left"><div class="skip"><a title="Improves accessibility when using a keyboard or screen reader" class="enableAccessibility" href="javascript:void(0)">Enable Accessibility</a></div><table border="0" cellspacing="0" id="banner_tall" class="productBanner" cellpadding="0"><tr style="margin: 0px; border: 0px;"><td class="bannerLeft" style="margin: 0px; border: 0px;"><a href="home.do" target="gsft_main"><style>IMG#mainBannerImage {
+						max-height: 50px;
+						width: auto;
+						height: auto;
+						margin-left: 2px;
+					}</style><img style="border: 0px;" id="mainBannerImage" title="Powered by People (Istanbul)" src="d2f24d4113b38b001ebaf6e2e144b0fd.iix"></img></a></td><td class="bannerCenter"></td><td width="100%" class="bannerRight"><div class="nav_header" style="padding-bottom: 0px; padding-top: 0px;">ServiceNow - Peak 10</div><div class="nav_header_description text-align-left" style="padding-bottom: 0px; padding-top: 4px;" id="nav_header_text">Powered by People</div></td></tr></table><div class="text-align-left" style="display:none;" id="banner_small"><span class="header_links"><img width="20" border="0" title="Powered by People (Istanbul)" src="images/logos/small_logo.gifx" height="30"></img>&nbsp;<b>Powered by People</b>&nbsp;</span></div><script>CustomEvent.observe('user.login', function(user) { showBannerBySize(user.getPreference('banner')); });
+
+		function showBannerBySize(size) {
+			  if (size == null)
+		          return;
+
+			  var tall = gel('banner_tall');
+			  var small = gel('banner_small');
+		      if (size == 'small') {
+				hideObject(tall);
+				showObject(small);
+			  } else {
+				showObject(tall);
+				hideObject(small);
+			  }
+		}</script></div></td><td align="right" class="navpageTools" valign="top"><div class="text-align-right" id="banner_top_right"><script>addLoadEvent(function () {
+         document.on('click', 'a.ui11_switcher', ui11Switch);
+      });
+
+      function ui11Switch(event, element) {
+         event.stop();
+         var toValue = element.getAttribute('data-set');
+         setPreference('glide.ui11.use', toValue, ui11Refresh);
+      }
+
+      function ui11Refresh() {
+      	 // with location.reload, IE9 will not reload the doctype as expected
+         if (Prototype.Browser.IE && !isMSIE9)
+         	window.location.reload()
+         else
+           	GlideURL.refresh();
+      }</script><span class="rightButtons"><img border="0" width="16" style="visibility: hidden" id="show_loading_gif" src="images/loading_anim2.gifx" height="16"></img><a title="Collapse/Expand Banner" style="color: white" onclick="toggleBanner();"><img width="20" border="0" id="banner_minimize" src="images/header_collapse.gifx" height="30"></img></a><script>CustomEvent.observe('ajax.loading.start', function() {
+							showObject(gel("show_loading_gif"), true);
+						});
+
+						CustomEvent.observe('ajax.loading.end', function() {
+							hideObject(gel("show_loading_gif"), true);
+						});</script></span></div></td></tr><tr style="height: 16px;"><td width="100%" colspan="99" class="nav_header_banner"><table border="0" cellspacing="0" class="wide"><tr class="nav_header_stripe"><td class="column_head" style="width: 500px;margin-right: 2px; height: 25px; font-weight:normal;" id="loggedin"><script>var essNavless = '';
+
+					CustomEvent.observe('user.login', function(user) {
+						if (user.roles.length > 0 || essNavless != 'true')
+							return;
+
+						hideObject(gel("maximize_button"));
+						toggleNav();
+					});</script><span style="margin-left: 2px;" id="maximize_button"><a onclick="toggleNav();"><img border="0" width="16" id="navToggleImage" src="images/toggle_left.gifx" class="h_flip_content" height="16"></img></a></span><script>CustomEvent.observe('user.logout', function() { hideObject(gel("gsft_login")); });
+					CustomEvent.observe('user.login', function(user) {
+							showObjectInline(gel("gsft_login"));
+							inner('gsft_full_name', htmlEscape(user.getFullName()));
+					});</script><span style="display: none" id="gsft_login"><span style="margin-left: 3px;"></span>Welcome:<span style="margin-left: 5px; display: inline" id="gsft_full_name_span"><a id="gsft_full_name" href="sys_user.do?sysparm_query=sys_id=javascript:gs.getUserID()&amp;sysparm_stack=no&amp;sysparm_view=ess" title="View my profile" class="welcome_msg" target="gsft_main">Guest</a></span></span><span style="margin-left:5px;" id="nav_header_stripe_decorations_left"></span><style>span.request_message:hover {text-decoration: underline;}</style><span style="display: none;padding-left:4px;padding-right:12px;" id="request_manager_output" class="pointerhand" onclick="CustomEvent.fire('request_cancel')"><img style="margin-right:0px" id="request_img" title="Cancel request" src="images/request_cancel.gifx"></img>&nbsp;<span title="Cancel request" class="request_message" id="request_message"></span>:&nbsp;<span style="cursor:default;" id="request_timer" onclick="event.cancelBubble = true;"></span></span></td><td align="left"><span style="display: inline;" id="output_message"></span></td><td style="font-weight:normal;" id="nav_header_stripe_decorations" align="right" class="column_head"><span style="display:" id="select_decorations"></span><script>addLoadEvent(function() {setSelectDecorationsToggle()});
+
+    function setSelectDecorationsToggle() {
+      var haveSome = false;
+      var e = gel("select_decorations");
+      var spans = e.getElementsByTagName("span");
+      for (var i = 0; spans.length > i; i++) {
+        if (spans[i].parentNode == e && spans[i].style.display != "none") {
+          haveSome = true;
+          break;
+        }
+      }
+      if (haveSome)
+        gel("select_toggle").style.display = "inline";
+    }
+
+    CustomEvent.observe('user.login', setDisplay);
+    function setDisplay() {
+      gel("select_decorations").style.display = getPreference('select_decorations');
+    }
+
+    function flipSelectDecorationsToggleImage() {
+      var e = gel("select_toggle");
+      if (e.src.indexOf("toggle_right.gif") > -1)
+        e.src = "images/toggle_left.gifx";
+      else
+        e.src = "images/toggle_right.gifx";
+    }</script><img style="display:none;cursor:pointer;cursor:hand;" id="select_toggle" title="Toggle selectors" src="images/toggle_right.gifx" class="h_flip_content" onclick="toggleInline('select_decorations');flipSelectDecorationsToggleImage();"></img><span style="margin-left:5px;"></span><script>function logoutConfirm(msg) {
+					    var logoutConfirm = 'false';
+						var canLogout = true;
+
+						if (logoutConfirm == 'true')
+							canLogout = confirm(msg);
+
+						if (canLogout) {
+						    getTopWindow().loggingOut = true;
+							gsft_main.location = '/logout.do';
+						}
+					}
+
+					CustomEvent.observe('user.logout', function() { hideObject(gel("gsft_logout")); });
+					CustomEvent.observe('user.login', function(user) {
+						if (user.getPreference('user.can.logout') == 'true')
+							showObjectInline(gel("gsft_logout"));
+					});</script><span style="display: none" id="gsft_logout"><button class="nav_header_button" onclick="javascript:logoutConfirm('Logout now?');">Logout</button></span><script>CustomEvent.observe('user.logout', function() { hideObject(gel("plugin_decorations")); });
+					CustomEvent.observe('user.login', showHomePages);
+
+					function showHomePages(userObject) {
+	  					showObjectInline(gel("plugin_decorations"));
+						if (userObject != null) {
+       						var db = userObject.getHomePages().split("^");
+							if (db.length == 0 || db.length == 1)
+								return; // no home pages no ugly empty context menu
+
+							var gcm = new GwtContextMenu('context_homepages');
+							gcm.clear();
+							for (var i = 0; i != db.length; i++) {
+								var db1 = db[i].split("xyzzyx");
+								if (db1[0] != '------------')
+									gcm.addURL(db1[0], "home_splash.do?sysparm_direct=true&sysparm_userpref_homepage=" + db1[1], "gsft_main");
+								else
+									gcm.addLine();
+							}
+						}
+					}</script><span style="display: none" id="plugin_decorations"><a onMouseOut="contextTimeout(event, 'homepages');" TARGET="gsft_main" onMouseOver="contextShow(event, 'homepages', 200, grabOffsetTop(this) + 20, 0, grabOffsetLeft(this) + 20);event.cancelBubble=true;" href="home_splash.do?sysparm_direct=true" class="header"><img width="16" src="images/icons/home_16.gifx" height="16"></img></a></span><a onclick="printList('25000');"><img width="16" title="Printer friendly version" src="images/printer.gifx" height="16"></img></a><a TARGET="gsft_help" HREF="help/index.htm" id="help_ico" class="header"><img width="16" title="Help" src="images/help.gifx" height="16"></img></a></td></tr></table></td></tr><tr><td colspan="99"><table cellspacing="0" border="0" class="navbody" cellpadding="0"><tr><td class="navControlsTD" nowrap="true" id="navControlsTD"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="60%" class="navControls" style="text-align: left;"><script>CustomEvent.observe('user.login', function(user) { resetNavFilter(); showObjectInline(gel("nav_filter_div")); setPreferredFont()});</script><div class="nav_filter_out" style="display: none; white-space: nowrap; width:100%;" id="nav_filter_div"><input onblur="navFilterBlur(this, ' Type filter text');" onfocus="navFilterFocus(this, ' Type filter text');" accesskey="f" onkeyup="navFilterKeyUp(this.value, ' Type filter text', event);" style="width:80%; visibility:hidden;font-size: smaller" id="filter" align="left" type="text" title="Type filter text" class="nav_filter_out" value=" Type filter text" onkeypress="navFilterKeyPress(this.value, ' Type filter text', event);"></input><a style=" visibility:hidden" id="nav_filter_controls" title="Clear" onclick="resetNavFilter();navFilterKeyUp('', ' Type filter text');"><img width="16" border="0" src="images/icons/nav_clear.gifx" height="16"></img></a></div></td><td width="40%" class="navControls" style="text-align: right;"><div id="nav_controls"><a title="Decrease font size" onclick="setPreferredFontSize(-1)"><img width="16" border="0" src="images/icons/nav_font_smaller.gifx" height="16"></img></a><a title="Increase font size" onclick="setPreferredFontSize(1)"><img width="16" border="0" style="margin-right: 0px" src="images/icons/nav_font_larger.gifx" height="16"></img></a><a title="Refresh Navigator" onclick="resetNavFilter(); getNavWindow().location = 'navigator_change.do'"><img width="16" border="0" src="images/icons/nav_refresh.gifx" height="16"></img></a><span style="display:none;" id="expand_apps"><a title="Expand All Applications" onclick="expandAllMenus();toggleCollapseIcon('collapse_apps','expand_apps');"><img width="16" border="0" src="images/icons/nav_expandall.gifx" height="16"></img></a></span><span id="collapse_apps"><a title="Collapse All Applications" onclick="collapseAllMenus();toggleCollapseIcon('expand_apps','collapse_apps');"><img width="16" border="0" src="images/icons/nav_collapseall.gifx" height="16"></img></a></span><a style="display:none" id="perspective_switcher" title="Switch Perspective" onclick="showPerspectiveMenu(event);"><img width="16" border="0" src="images/icons/menu_switch.gifx" height="16"></img></a></div></td></tr></table><div name="show_all_apps" style="display:none" id="show_all_apps"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td width="100%" style="border:0; text-align:right; padding-right:4px;" nowrap="true" class="navControlsTD"><a style="color:gray; font-size: 8pt;" href="navigator_change.do?sysparm_userpref.perspective=All" onclick="parent.resetNavFilter();hideAllAppsLink();" target="gsft_nav">Show all applications</a></td></tr></table></div></td><td class="navpage_middle" rowspan="2" id="linenavtd"><img width="1" class="nopadding" src="images/s.gifx"></img></td><td class="navpage_right" rowspan="2" id="rightnavtd"><iframe src="blank.do" name="gsft_main" style="position: relative; left: 0px; top: 0px;" frameborder="0" id="gsft_main" title="Navigation Content" class="gsft_full" onload="timeoutOutputMessages('output_message');"></iframe></td></tr><tr><td class="navpage_left" id="leftnavtd"><iframe name="gsft_nav" frameborder="0" id="gsft_nav" title="Navigation Menu" class="navframe gsft_full" src="blank.do"></iframe></td></tr></table></td></tr><script>addLoadEvent(function() {
+		var iframe = $('gsft_nav');
+		if (iframe)
+			iframe.src = 'navigator.do';
+
+		iframe = $('gsft_main');
+		if (iframe)
+			iframe.src = 'welcome.do';
+	});
+
+	/* 	PRB592287 - address an intermittent issue found in Chrome 31.0.1650.48 and above:
+		iframe content is not loaded and blank page is displayed.  Need to refresh the iframes accordingly. */
+	function reloadIFrameForChrome() {
+		if (!isChrome)
+			return;
+
+		var navframe = $('gsft_nav');
+		if (navframe) {
+			Event.observe(navframe, 'load', function () {
+				if (navframe.contentWindow.location.href != navframe.src &&
+						navframe.contentWindow.location.href.indexOf("blank") >= 0) {
+					navframe.contentWindow.location.href = navframe.src;
+				}
+			});
+		}
+
+		var mainframe = $('gsft_main');
+		if (mainframe) {
+			Event.observe(mainframe, 'load', function () {
+				if (mainframe.contentWindow.location.href != mainframe.src &&
+						mainframe.contentWindow.location.href.indexOf("blank") >= 0) {
+					mainframe.contentWindow.location.href = mainframe.src;
+				}
+			});
+		}
+	}
+	reloadIFrameForChrome();</script><script data-comment="GlideUser initialization">
+		addTopRenderEvent( function() {
+			// user may have already been created
+			if (!window.g_user) {
+				window.g_user = new GlideUser('guest',
+					  '',
+					  'Guest',
+					  '',
+					  '5136503cc611227c0183e96598c4f706',
+					  '221db0edc611228401760aec06c9d929');
+				window.g_user.setRoles('', true);
+			}
+		    });</script><tr class="footer-tray-hidden" id="footerTrayRow"><td colspan="99" onselectstart="return false;" id="footerTray" class="footer-tray"><div class="footer-tray-wrapper"><div class="splitter_h" id="debugToolsSplitterH"></div><div class="footer-frame-wrapper"><iframe src="images/s.gifx" frameBorder="0" id="footerTrayFrm"></iframe></div></div></td></tr></table><div class="ghost-splitter" id="ghostSplitter"></div><script type="text/javascript" src="/scripts/js_includes_last.jsx?v=04-25-2018_0908&amp;lp=Thu_Dec_21_15_10_12_PST_2017&amp;c=11_202"></script><script>/*! RESOURCE: /scripts/ApplicationChangeNotificationHandler.jsx */
+(function() {
+var ApplicationChangeNotificationHandler = Class.create({
+process: function( notification) {
+this._appPicker();
+this.type = 'info';
+if (notification.getAttribute('update_only') != 'true')
+this._notify(notification);
+},
+_appPicker: function() {
+if (typeof g_application_picker != 'undefined')
+g_application_picker.fillApplications();
+},
+_notify: function(notification) {
+var text = this._create(notification);
+var notification = {
+text: text,
+type: this.type,
+sticky: (this.type == 'warning'),
+bundleMessages: true,
+closeDelay: 3000
+}
+GlideUI.get().display(notification);
+},
+_create: function(notification) {
+var nn = notification.getAttribute('name');
+var template_key = notification.getAttribute('template_key');
+var ss = new XMLTemplate('glide:' + template_key).evaluate({name: nn});
+return ss;
+},
+toString: function() { return 'ApplicationChangeNotificationHandler'; }
+});
+ApplicationChangeNotificationHandler.APPLICATION_CHANGE_EVENT = 'glide:ui_notification.application_change';
+var handler = new ApplicationChangeNotificationHandler();
+CustomEvent.observe(ApplicationChangeNotificationHandler.APPLICATION_CHANGE_EVENT, function(notification) {
+handler.process(notification);
+});
+})();
+;</script><script>/*! RESOURCE: /scripts/UpdateSetChangeNotificationHandler.jsx */
+(function () {
+var UpdateSetChangeNotificationHandler = Class.create({
+process: function ( notification) {
+this._updatePicker();
+this.type = 'info';
+if (notification.getType && notification.getType() == UpdateSetChangeNotificationHandler.UPDATE_SET_CHANGE
+&& notification.getAttribute('update_only') != 'true')
+this._notify(notification);
+},
+_updatePicker: function () {
+if (typeof g_update_set_picker != 'undefined')
+g_update_set_picker.fillUpdateSets();
+},
+_notify: function (notification) {
+var text = this._create(notification);
+var notification = {
+text: text,
+type: this.type,
+sticky: (this.type == 'warning'),
+bundleMessages: true
+}
+GlideUI.get().display(notification);
+},
+_create: function (notification) {
+var n = notification.getAttribute('name');
+if (n == 'Default')
+this.type = 'warning';
+else
+this.type = '';
+var s = new XMLTemplate('glide:usn_change').evaluate({name: n, type: this.type});
+var msg = notification.getAttribute('msg');
+if (msg) {
+s += "<br/>" + msg;
+this.type = 'warning';
+}
+return s;
+},
+toString: function () {
+return 'UpdateSetChangeNotificationHandler';
+}
+});
+UpdateSetChangeNotificationHandler.UPDATE_SET_CHANGE = 'update_set_change';
+UpdateSetChangeNotificationHandler.UPDATE_SET_CHANGE_EVENT = 'glide:ui_notification.' + UpdateSetChangeNotificationHandler.UPDATE_SET_CHANGE;
+UpdateSetChangeNotificationHandler.APPLICATION_CHANGE_EVENT = 'glide:ui_notification.application_change';
+var handler = new UpdateSetChangeNotificationHandler();
+CustomEvent.observe(UpdateSetChangeNotificationHandler.UPDATE_SET_CHANGE_EVENT, function (notification) {
+handler.process(notification);
+});
+CustomEvent.observe(UpdateSetChangeNotificationHandler.APPLICATION_CHANGE_EVENT, function (notification) {
+handler.process(notification);
+});
+})();
+;</script><script type="text/javascript">addLoadEvent(function() {
+        GlideUI.get().fireNotifications();
+    });
+
+    addLoadEvent(function() {
+       // changeHandlerHack
+       jslog("fireAllChangeHandlers start");
+       fireAllChangeHandlers();
+       jslog("fireAllChangeHandlers end");
+    });
+
+    runBeforeRender.defer();
+
+
+    addLateLoadEvent(function() {
+        CustomEvent.fireTop('page_loaded_fully');
+    });
+
+    // run all of the addLoad and addLateLoad functions
+	// last deferred include runs the on after all loaded functions
+	// see functions_bootstrap.js::runAfterAllLoaded for details on why we cannot defer execution of runAfterAllLoaded on IE6
+	//    (hint: it is due to using the window.onload event to run the addRenderEvents and addLoadEvents in IE6)
+	if (!isMSIE6)
+	    runAfterAllLoaded.defer();
+	else
+	    runAfterAllLoaded();</script></body></html>

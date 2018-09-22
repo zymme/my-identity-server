@@ -54,8 +54,7 @@ namespace IdentityServerv2
 
             services.AddIdentityServer()
                     .AddDeveloperSigningCredential()
-                    //.AddInMemoryPersistedGrants()
-
+                   
                     // this adds config data from DB (clients, resources)
                     .AddConfigurationStore(options => {
 

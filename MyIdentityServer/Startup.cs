@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.Saml.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +18,7 @@ namespace MyIdentityServer
         {
             services.AddMvc();
 
-            var cert = new System.Security.Cryptography.X509Certificates.X509Certificate2("wildcard.viawest.net.pfx", "insecure");
+            var cert = new System.Security.Cryptography.X509Certificates.X509Certificate2("temp_authserver.pfx", "flexential");
 
 
             services.AddIdentityServer()

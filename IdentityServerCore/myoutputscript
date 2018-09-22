@@ -91,3 +91,14 @@ INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
 VALUES (N'20180914203537_serviceproviderDbMigration', N'2.1.1-rtm-30846');
 
 GO
+
+
+
+ var idClientOptions = new IdentityClientOptions
+  {
+      LocationUrl = WebConfigurationManager.AppSettings["IdentityServerLocation"],
+      ClientId = WebConfigurationManager.AppSettings["IdentityServerClientId"],
+      ClientSecret = WebConfigurationManager.AppSettings["IdentityServerSecret"],
+      ResourceId = WebConfigurationManager.AppSettings["IdentityServerResourceId"],
+      ResourceSecret = WebConfigurationManager.AppSettings["IdentityServerResourceSecret"],
+  };

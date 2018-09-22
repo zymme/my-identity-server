@@ -186,7 +186,7 @@ namespace MyIdentityServer
                     EntityId = "https://peak10dev.service-now.com",
                     //SigningCertificates = clientcerts,
                     
-
+                    RequireSamlRequestDestination = false,
                     AssertionConsumerServices = { new Service(SamlConstants.BindingTypes.HttpPost, "https://peak10dev.service-now.com/navpage.do") }
                 }
             };

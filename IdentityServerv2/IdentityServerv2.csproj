@@ -17,5 +17,10 @@
     <Folder Include="Data\Migrations\IdentityServer\PersistedGrantDb\" />
     <Folder Include="Models\AccountViewModels\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Models\ManageViewModels\" />
+    <Folder Include="Views\Manage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Manage\_ManageNav.cshtml" />
   </ItemGroup>
 </Project>
