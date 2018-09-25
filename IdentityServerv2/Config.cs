@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
@@ -11,6 +13,22 @@ namespace IdentityServerv2
 {
     public static class Config
     {
+
+        internal static X509Certificate2 GetSigningCertificate(string rootPath)
+        {
+            var fileName = Path.Combine(rootPath, "zedgroupcert.pfx");
+
+            if (!File.Exists(fileName))
+            {
+                throw new FileNotFoundException("Signing Certificate is missing!");
+            }
+
+            var cert = new X509Certificate2(fileName, "bigbear");
+            return cert;
+        }
+
+
+
         public static IEnumerable<ApiResource> GetApiResources()
         {
             return new List<ApiResource>

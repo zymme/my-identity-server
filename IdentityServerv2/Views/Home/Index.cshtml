@@ -76,8 +76,12 @@
                     else
                     {
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Log In</a> OR 
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Register</a>
+                            <a asp-area="" class="btn btn-primary" asp-controller="Account" asp-action="Login">Login</a>
+
+                            OR 
+
+                            <a asp-area="" class="btn btn-primary" asp-controller="Account" asp-action="Register">Register</a>
+
                         </p>
 
                     }

@@ -19,12 +19,14 @@ namespace IdentityServerv2
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            _env = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment _env { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -53,7 +55,8 @@ namespace IdentityServerv2
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddIdentityServer()
-                    .AddDeveloperSigningCredential()
+                    //.AddDeveloperSigningCredential()
+                    .AddSigningCredential(Config.GetSigningCertificate(_env.ContentRootPath))
                    
                     // this adds config data from DB (clients, resources)
                     .AddConfigurationStore(options => {
