@@ -14,6 +14,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using IdentityServerv2.Models;
 using System.Reflection;
+using IdentityServer4.Services;
+using Microsoft.Extensions.Logging;
 
 namespace IdentityServerv2
 {
@@ -27,10 +29,21 @@ namespace IdentityServerv2
 
         public IConfiguration Configuration { get; }
         public IHostingEnvironment _env { get; set; }
+        private ILoggerFactory _loggerFactory {get;set;}
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            _loggerFactory = new LoggerFactory();
+
+            var cors = new DefaultCorsPolicyService(_loggerFactory.CreateLogger<DefaultCorsPolicyService>())
+            {
+                AllowedOrigins = { "http://localhost:4200" }
+            };
+
+            services.AddSingleton<ICorsPolicyService>(cors);
+
+            
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
