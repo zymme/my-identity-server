@@ -36,12 +36,12 @@ namespace IdentityServerv2
         {
             _loggerFactory = new LoggerFactory();
 
-            var cors = new DefaultCorsPolicyService(_loggerFactory.CreateLogger<DefaultCorsPolicyService>())
-            {
-                AllowedOrigins = { "http://localhost:4200" }
-            };
+            //var cors = new DefaultCorsPolicyService(_loggerFactory.CreateLogger<DefaultCorsPolicyService>())
+            //{
+            //    AllowedOrigins = { "http://localhost:4200" }
+            //};
 
-            services.AddSingleton<ICorsPolicyService>(cors);
+            //services.AddSingleton<ICorsPolicyService>(cors);
 
             
             services.Configure<CookiePolicyOptions>(options =>
@@ -62,9 +62,7 @@ namespace IdentityServerv2
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
             
-            //services.AddDefaultIdentity<IdentityUser>()
-                //.AddEntityFrameworkStores<ApplicationDbContext>();
-
+           
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddIdentityServer()
