@@ -23,4 +23,9 @@
   <ItemGroup>
     <Content Remove="Views\Manage\_ManageNav.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="zedgroupcert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>

@@ -234,6 +234,17 @@ namespace IdentityServerv2.Controllers
                     //var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
                     //await _emailSender.SendEmailConfirmationAsync(model.Email, callbackUrl);
 
+
+                    // add user first name and last name to claims
+                    List<Claim> claims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.GivenName, model.FirstName),
+                        new Claim(ClaimTypes.Surname, model.LastName)
+                    };
+
+                    var addClaimsResult = await _userManager.AddClaimsAsync(user, claims);
+
+
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
                     return RedirectToLocal(returnUrl);
@@ -253,6 +264,16 @@ namespace IdentityServerv2.Controllers
             _logger.LogInformation("User logged out.");
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
+
+
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            // build a model so the logout page knows what to display
+            var vm = await BuildLogoutViewModelAsync(logoutId);
+
+        }
+
 
         [HttpPost]
         [AllowAnonymous]
@@ -461,6 +482,30 @@ namespace IdentityServerv2.Controllers
             {
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
+        }
+
+        private async Task<LogoutViewModel> BuildLogoutViewModelAsync(string logoutId)
+        {
+            var vm = new LogoutViewModel { LogoutId = logoutId, ShowLogoutPrompt = AccountOptions.ShowLogoutPrompt };
+
+            if (User?.Identity.IsAuthenticated != true)
+            {
+                // if the user is not authenticated, then just show logged out page
+                vm.ShowLogoutPrompt = false;
+                return vm;
+            }
+
+            var context = await _interaction.GetLogoutContextAsync(logoutId);
+            if (context?.ShowSignoutPrompt == false)
+            {
+                // it's safe to automatically sign-out
+                vm.ShowLogoutPrompt = false;
+                return vm;
+            }
+
+            // show the logout prompt. this prevents attacks where the user
+            // is automatically signed out by another malicious web page.
+            return vm;
         }
 
         #endregion
