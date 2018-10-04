@@ -19,13 +19,30 @@
     <Folder Include="Views\Account\" />
     <Folder Include="Models\ManageViewModels\" />
     <Folder Include="Views\Manage\" />
+    <Folder Include="Models\LogoutViewModels\" />
+    <Folder Include="Options\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="Views\Manage\_ManageNav.cshtml" />
+    <Content Remove="Views\Account\LoggedOut.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\Account\LoggedOut.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>LoggedOut.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Update="zedgroupcert.pfx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Account\LoggedOut.cs">
+      <DependentUpon>LoggedOut.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Account\LoggedOut.cs">
+      <DependentUpon>LoggedOut.cshtml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
